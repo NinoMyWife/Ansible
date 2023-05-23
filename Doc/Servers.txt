@@ -1,0 +1,91 @@
+Help on module Servers:
+
+NAME
+    Servers
+
+DESCRIPTION
+    ##########################################################################
+    # Importattion des bibliothèques
+    ##########################################################################
+
+CLASSES
+    builtins.object
+        Class_Servers
+    
+    class Class_Servers(builtins.object)
+     |  A class which contains all the methods on the Server:
+     |  
+     |  - Get Infos Server Windows
+     |  - Get InfosServer Linux
+     |  - Insert Server BDD
+     |  - Add Server
+     |  - Delete Server
+     |  - Set Unknown Server BDD
+     |  
+     |  Methods defined here:
+     |  
+     |  DeleteServerBDD(self, IDServer)
+     |      This function remove a Server from the DataBase
+     |      
+     |      Args:
+     |          IDServer (int): ID of the Server
+     |      
+     |      Raises:
+     |          mysql.connector.errors.Error: Error mysql
+     |      
+     |      Returns:
+     |          Bool: 0 it's good, 1 An error has occured
+     |  
+     |  GetInfosServerLinux(self, IP, UserAnsible, PassAnsible)
+     |      This function return informations of Linux Server
+     |      
+     |      Args:
+     |          IP (str): A Server IP
+     |          UserAnsible (str): User Ansible
+     |          PassAnsible (str): Password Ansible
+     |      
+     |      Returns:
+     |          str: Return informations of Linux Server
+     |  
+     |  GetInfosServerWindows(self, IP, UserAnsible, PassAnsible)
+     |      This function return informations of Windows Server
+     |      
+     |      Args:
+     |          IP (str): A Server IP
+     |          UserAnsible (str): User Ansible
+     |          PassAnsible (str): Password Ansible
+     |      
+     |      Returns:
+     |          str: Return informations of Windows Server
+     |  
+     |  InsertServerBDD(self, Hostname, Idhyperviseur, Idos, Commonname, Useransible, Passansible, Deleted)
+     |      This function insert the object Server into the DataBase
+     |      
+     |      Raises:
+     |          mysql.connector.errors.Error:  Error mysql
+     |  
+     |  SetUnknownServerBDD(self)
+     |      This function add unknow status to server into the database
+     |      
+     |      Raises:
+     |          mysql.connector.errors.Error: Error mysql
+     |      
+     |      Returns:
+     |          Bool: 0 it's good, 1 An error has occured
+     |  
+     |  __init__(self)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+FILE
+    /root/ScriptsInventaireDynamique/Maintest/Servers.py
+
+

@@ -1,0 +1,244 @@
+Help on module Tools:
+
+NAME
+    Tools
+
+DESCRIPTION
+    ##########################################################################
+    # Importation des bibliotheques
+    ##########################################################################
+
+CLASSES
+    builtins.object
+        Class_Tools
+    
+    class Class_Tools(builtins.object)
+     |  A class which contains some usefull tools:
+     |  
+     |  - IP Is Already Affected
+     |  - Test Connexion Ansible
+     |  - Get User Ansible
+     |  - Get Password Ansible
+     |  - Hostname Exist
+     |  - Get Hostname Windows
+     |  - Get Hostname Linux
+     |  - Get User Administrator
+     |  - Get Password Administrator
+     |  - SSH Port Linux
+     |  - Winrm Port
+     |  - Add Ip On IP Server
+     |  - Get Serveur ID
+     |  - Get Pool IP ID
+     |  - Is Public VLAN
+     |  - Is Hostanme AND IP Server already Exist
+     |  
+     |  Methods defined here:
+     |  
+     |  AddIpOnIPServer(self, IDPoolIP, IDServer, PublicVLAN)
+     |      This function will add a secondary ip to a server
+     |      
+     |      Args:
+     |          IDPoolIP (str): ID of PoolIp
+     |          IDServer (str): ID of IDServer
+     |          PublicVLAN (bool): public server or not
+     |      
+     |      Raises:
+     |          mysql.connector.errors.Error: Request error
+     |  
+     |  GetHostnameLin(self, IPServer, UserAnsible, PassAnsible)
+     |      This function will return the Linux Hostname
+     |      
+     |      Args:
+     |          IPServer (str): A Server IP
+     |          UserAnsible (str): User Ansible
+     |          PassAnsible (str): Password Ansible
+     |      
+     |      Raises:
+     |          Exception: Connection error
+     |      
+     |      Returns:
+     |          str: Linux Hostname
+     |  
+     |  GetHostnameWin(self, IPServer, UserAnsible, PassAnsible)
+     |      This function will return the Windows Hostname
+     |      
+     |      Args:
+     |          IPServer (str): A Server IP
+     |          UserAnsible (str): User Ansible
+     |          PassAnsible (str): Password Ansible
+     |      
+     |      Raises:
+     |          Exception: Connection error
+     |      
+     |      Returns:
+     |          str: Windows Hostname
+     |  
+     |  GetPassAdmin(self, IDServer)
+     |      This function will return the Password Administrator
+     |      
+     |      Args:
+     |          IDServer (int): A Server ID
+     |      
+     |      Raises:
+     |          mysql.connector.errors.Error: Request error
+     |      
+     |      Returns:
+     |          str: Return the Administrator Password
+     |  
+     |  GetPassAnsible(self, IDServer)
+     |      This function will return the Ansible Password
+     |      
+     |      Args:
+     |          IDServer (int): A Server ID
+     |      
+     |      Raises:
+     |          mysql.connector.errors.Error: Request error
+     |      
+     |      Returns:
+     |          str: Return the Ansible Password
+     |  
+     |  GetPoolIPID(self, IPServer)
+     |      This function will return the PoolIP ID
+     |      
+     |      Args:
+     |          IPServer (str): A Server IP
+     |      
+     |      Raises:
+     |          Exception: Connection error
+     |      
+     |      Return:
+     |          int: ID of PoolIP
+     |  
+     |  GetServeurID(self, IPServer)
+     |      This function will return the Server ID
+     |      
+     |      Args:
+     |          IPServer (str): A Server IP
+     |      
+     |      Raises:
+     |          Exception: Connection error
+     |      
+     |      Return:
+     |          int: ID of Server
+     |  
+     |  GetUserAdmin(self, IDServer)
+     |      This function will return the User Administrator
+     |      
+     |      Args:
+     |          IDServer (int): A Server ID
+     |      
+     |      Raises:
+     |          mysql.connector.errors.Error: Request error
+     |      
+     |      Returns:
+     |          str: Return the Administrator User
+     |  
+     |  GetUserAnsible(self, IDServer)
+     |      This function will return the Ansible User
+     |      
+     |      Args:
+     |          IDServer (int): A Server ID
+     |      
+     |      Raises:
+     |          mysql.connector.errors.Error: Request error
+     |      
+     |      Returns:
+     |          str: Return the Ansible User
+     |  
+     |  HostnameExist(self, Hostname)
+     |      This function Check if Hostname already Exist
+     |      
+     |      Args:
+     |          IPServer (str): IP of the Server
+     |          Hostname (str): Hostname of the Server
+     |      
+     |      Raises:
+     |          mysql.connector.errors.Error: Error mysql
+     |      
+     |      Returns:
+     |          Bool: 0 Server doesn't exist, 1 Server exist
+     |  
+     |  IPIsAlreadyAffected(self, IPServer)
+     |      This function test if the IP is already affected
+     |      
+     |      Args:
+     |          IPServer (str): A Server IP
+     |      
+     |      Raises:
+     |          Exception: Connection error
+     |      
+     |      Return:
+     |          bool: 1 = good | 0 = error
+     |  
+     |  IsHostanmeANDIPServeralreadyExist(self, Hostname, IPServer)
+     |      This function will check if IP AND Hostname are already used
+     |      
+     |      Args:
+     |          Hostname (str): Hostname of Server
+     |          IPServer (str): IP of Server
+     |      
+     |      Raises:
+     |          mysql.connector.errors.Error: Request error
+     |      
+     |      Returns:
+     |          Bool: 0 Server doesn't exist, 1 Server exist
+     |  
+     |  IsPublicVLAN(self, IDPoolIP)
+     |      This function will return if the VLAN is public or not 
+     |      
+     |      Args:
+     |          IPServer (str): PoolIP ID
+     |      
+     |      Raises:
+     |          Exception: Connection error
+     |      
+     |      Return:
+     |          int: ID of PoolIP
+     |  
+     |  IsSSHAccessible(self, host)
+     |      This function will test the ssh port for Linux Server
+     |      
+     |      Args:
+     |          host (str): IP of Linux Server
+     |      
+     |      Returns:
+     |          bool: 1 = error | 0 = good
+     |  
+     |  TestConnexionAnsible(self, IPServer, UserAnsible, PassAnsible, TypeOS)
+     |      This function test the connection to Ansible 
+     |      
+     |      Args:
+     |          IPServer (str): A Server IP
+     |          UserAnsible (str): User Ansible
+     |          PassAnsible (str): Password Ansible
+     |          TypeOS (str): Type of the OS
+     |      
+     |      Raises:
+     |          Exception: Connection error
+     |  
+     |  WinrmPort(self, host)
+     |      This function will test the ssh port for Windows Server
+     |      
+     |      Args:
+     |          host (str): IP of Linux Server
+     |      
+     |      Returns:
+     |          bool: 1 = error | 0 = good
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+FUNCTIONS
+    getrandbits(...) method of random.Random instance
+        getrandbits(k) -> x.  Generates an int with k random bits.
+
+FILE
+    /root/ScriptsInventaireDynamique/Maintest/Tools.py
+
+

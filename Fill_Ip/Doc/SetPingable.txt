@@ -1,0 +1,9 @@
+This function will update the BDD if IP is pingable
+
+    Args:
+        Pingable (bool) : 0 it's ok, 1 it's not ok
+        IP (str): A Server IP
+
+    Raises:
+        mysql.connector.errors.Error: Request error
+
